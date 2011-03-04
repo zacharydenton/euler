@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-# Work out the first ten digits of the sum of the following 
-# fifty digit numbers.
-
 digits_string = '''
 37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
