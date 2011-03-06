@@ -71,6 +71,4 @@ def num_divisors(n):
 
 triangles = (triangle(i) for i in range(1,100000))
 divisible_triangles = (i for i in triangles if num_divisors(i) > 500)
-for n in divisible_triangles:
-    print n
-    break
+print divisible_triangles.next()

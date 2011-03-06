@@ -22,4 +22,4 @@ def factorize(n):
         res.append(n)
     return res
 
-print factorize(number)
+print max(factorize(number))

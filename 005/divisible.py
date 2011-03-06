@@ -19,4 +19,4 @@ def divisible_to(x):
             found = is_divisible_to(number, x)
         return number
 
-print divisible_to(500)
+print divisible_to(20)

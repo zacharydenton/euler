@@ -27,35 +27,19 @@ for line in grid_string.splitlines():
     grid.append([int(number) for number in line.split()])
 
 greatest_product = 0
-greatest_x = None
-greatest_y = None
-greatest_direction = None
-greatest_sequence = None
 for y, row in enumerate(grid):
     for x, col in enumerate(row):
         for x_dir in range(-1, 2):
             for y_dir in range(-1, 2):
                 if x_dir == 0 and y_dir == 0: continue
                 product = 1
-                sequence = []
                 for i in range(4):
                     x_pos = x + (i * x_dir)
                     y_pos = y + (i * y_dir)
                     if (x_pos < 0 or y_pos < 0): break
                     elif (y_pos >= len(grid) or x_pos >= len(row)): break
                     product *= grid[y_pos][x_pos]
-                    sequence.append(grid[y_pos][x_pos])
                 if product > greatest_product:
                     greatest_product = product
-                    greatest_x = x
-                    greatest_y = y
-                    greatest_direction = (x_dir, y_dir)
-                    greatest_sequence = sequence
 
-print "greatest product is: %s." % greatest_product
-print "found at row %s, column %s in direction %s." % (greatest_y, greatest_x, greatest_direction)
-print "the sequence was: %s" % greatest_sequence
-
-
-
-
+print greatest_product

@@ -11,4 +11,4 @@
       (prime-iter (nth nums (+ i 1)) (improve (nth nums (+ i 1)) nums) (+ i 1))))
   (prime-iter 2 (range 2 (+ n 1)) -1))
 
-(println (apply + (primes 2000000)))
+(println (reduce + (primes 2000000)))

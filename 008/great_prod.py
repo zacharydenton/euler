@@ -1,7 +1,4 @@
 #!/usr/bin/python
-
-# finds the greatest product of x consecutive digits in an arbitrary string of digits
-length = 5
 numbers = '''
 73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
@@ -24,17 +21,15 @@ numbers = '''
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
 '''
-numString = numbers.strip().replace('\n', '')
-greatProd = 0
-greatString = []
+numstring = numbers.strip().replace('\n', '')
+greatest_product = 0
 
-for i in range(len(numString)):
-	prod = 1
-	string = numString[i:i+5]
-	for num in string:
-		prod *= int(num)
-	if prod > greatProd:
-		greatProd = prod
-		greatString = string
+for i in range(len(numstring)):
+	product = 1
+	substring = numstring[i:i+5]
+	for digit in substring:
+		product *= int(digit)
+	if product > greatest_product:
+		greatest_product = product
 
-print "largest product is", greatProd, "from string '%s'" % greatString
+print greatest_product
