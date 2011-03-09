@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import math
-number = 600851475143
 
 def factorize(n):
     res = []
@@ -22,4 +21,4 @@ def factorize(n):
         res.append(n)
     return res
 
-print max(factorize(number))
+print max(factorize(600851475143))
