@@ -77,5 +77,3 @@ def cleanse_string(string):
     return string
 
 print sum(len(cleanse_string(to_english(i))) for i in range(1, 1001))
-
-
