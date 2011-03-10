@@ -1,0 +1,14 @@
+#!/usr/bin/env clojure
+(defn divisors [n]
+  (filter #(= (rem n %) 0) (range 1 n)))
+
+(defn perfect? [n]
+  (= (reduce + (divisors n)) n))
+
+(defn abundant? [n]
+  (> (reduce + (divisors n)) n))
+
+(defn deficient? [n]
+  (< (reduce + (divisors n)) n))
+
+(println (filter abundant? (range 15000)))
