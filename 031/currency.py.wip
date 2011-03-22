@@ -17,9 +17,6 @@ def ways_to_change(currencies, amount):
             if sum(c) == amount:
                 yield c
 
-def number_of_ways_to_change(currencies, amount):
-    pass
-
 def main():
     currencies = (1, 2, 5, 10, 20, 50, 100, 200)
     print(len(set(ways_to_change(currencies, 30))))
