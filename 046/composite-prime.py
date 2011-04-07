@@ -1,19 +1,4 @@
 #!/usr/bin/env python
-# It was proposed by Christian Goldbach that every odd 
-# composite number can be written as the sum of a prime 
-# and twice a square.
-#
-#   9 = 7 + 212
-#   15 = 7 + 222
-#   21 = 3 + 232
-#   25 = 7 + 232
-#   27 = 19 + 222
-#   33 = 31 + 212
-# 
-# It turns out that the conjecture was false.
-#
-# What is the smallest odd composite that cannot be 
-# written as the sum of a prime and twice a square?
 from itertools import product
 
 def sieve(n):
@@ -33,11 +18,11 @@ def sieve(n):
 
 def main():
     primes = sieve(10000)
-    composites = set(n for n in range(10000) if n not in primes)
+    composites = set(n for n in range(2,10000) if n not in primes)
     twicesquares = set(2*(n**2) for n in range(100))
 
     sums = set(sum(c) for c in product(primes, twicesquares))
-    print [n for n in composites if n not in sums and n % 2 != 0]
+    print min(n for n in composites if n not in sums and n % 2 != 0)
 
 if __name__ == "__main__":
     main()

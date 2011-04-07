@@ -70,12 +70,6 @@ def is_prime(num):
     else:
         return False
 
-def seq_is_prime(seq):
-    for x in seq:
-        if not is_prime(x):
-            return False
-    return True
-
 def sieve(n):
     numbers = range(2, n+1)
     p = 2
@@ -104,13 +98,8 @@ def arithmetic_subsequences(seq, length=3):
                 yield [x + (i*step) for i in range(length)]
 
 def main():
-    primes = sieve(10000)
-    primes = primes[168:] # only 4-digit primes
-
-    for seq in arithmetic_subsequences(primes, 3):
-        if is_permutations(seq):
-            print ''.join([str(x) for x in seq])
-
+    primes = [p for p in sieve(10000) if len(str(p)) == 4]
+    print max(''.join(str(x) for x in seq) for seq in arithmetic_subsequences(primes, 3) if is_permutations(seq))
 
 if __name__ == "__main__":
     main()
