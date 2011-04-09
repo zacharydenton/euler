@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+import collections
+from itertools import *
+
+def triangle(n): return n*(n+1)/2
+def square(n): return n*n
+def pentagonal(n): return n*(3*n-1)/2
+def hexagonal(n): return n*(2*n-1)
+def heptagonal(n): return n*(5*n-3)/2
+def octagonal(n): return n*(3*n-2)
+triangles = filter(lambda n: n < 10000 and n >= 1000, map(triangle, range(1000)))
+squares = filter(lambda n: n < 10000 and n >= 1000, map(square, range(1000)))
+pentagonals = filter(lambda n: n < 10000 and n >= 1000, map(pentagonal, range(1000)))
+hexagonals = filter(lambda n: n < 10000 and n >= 1000, map(hexagonal, range(1000)))
+heptagonals = filter(lambda n: n < 10000 and n >= 1000, map(heptagonal, range(1000)))
+octagonals = filter(lambda n: n < 10000 and n >= 1000, map(octagonal, range(1000)))
+
+def flatten(l):
+    for el in l:
+        if isinstance(el, collections.Iterable) and not isinstance(el, basestring):
+            try:
+                if not isinstance(el[0], collections.Iterable):
+                    yield el
+            except:
+                for sub in flatten(el):
+                    yield sub
+        else:
+            yield el
+
+def is_cyclic(a, b):
+    return str(a)[-2:] == str(b)[:2]
+
+def find_chains(chain, candidates):
+    if chain[-1] in triangles:
+        candidates = [c for c in candidates if c not in triangles]
+    elif chain[-1] in squares:
+        candidates = [c for c in candidates if c not in squares]
+    elif chain[-1] in pentagonals:
+        candidates = [c for c in candidates if c not in pentagonals]
+    elif chain[-1] in hexagonals:
+        candidates = [c for c in candidates if c not in hexagonals]
+    elif chain[-1] in heptagonals:
+        candidates = [c for c in candidates if c not in heptagonals]
+    elif chain[-1] in octagonals:
+        candidates = [c for c in candidates if c not in octagonals]
+
+    if len(candidates) == 0:
+        return chain
+
+    next_candidates = [c for c in candidates if is_cyclic(chain[-1], c)]
+    if len(next_candidates) == 0:
+        return chain
+
+    return flatten([find_chains(chain + [next], candidates) for next in next_candidates])
+
+def main():
+    candidates = list(chain(triangles, squares, pentagonals, hexagonals, heptagonals, octagonals))
+    for start in candidates:
+        chains = list(find_chains([start], candidates))
+        print chains
+
+if __name__ == "__main__":
+    main()
