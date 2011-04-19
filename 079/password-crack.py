@@ -2,32 +2,19 @@
 from itertools import *
 from collections import defaultdict
 
-def possibilities(seq,length=7):
-    # seq is seq with length 3
-    # we need to put combine it into a length 6
-    slots = sorted(set(permutations('111'+'0'*(length-3))))
-    for slot in slots:
-        slot = list(slot)
-        j = 0
-        for i,s in enumerate(slot):
-            if s == '1':
-                slot[i] = seq[j]
-                j += 1
-
-        yield slot
-
 def main():
-    appearances = defaultdict(list)
     attempts = [line.strip() for line in open('keylog.txt').readlines()]
+    appearances = defaultdict(list)
     for attempt in attempts:
         for i, n in enumerate(attempt):
             appearances[n].append(i)
+
+    average_positions = {}
     for k,v in appearances.items():
-        appearances[k] = float(sum(v))/float(len(v))
-    import operator
-    a = [k for k,v in sorted(appearances.items(),key=operator.itemgetter(1))]
+        average_positions[k] = float(sum(v))/float(len(v))
+
+    a = [k for k,v in sorted(average_positions.items(), key=lambda a: a[1])]
     print ''.join(str(x) for x in a)
+
 if __name__ == "__main__":
     main()
-
-    
