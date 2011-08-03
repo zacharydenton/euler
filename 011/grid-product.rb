@@ -1,6 +1,5 @@
-#!/usr/bin/env python
-grid = []
-grid_string = '''
+#!/usr/bin/env ruby
+grid_string = <<EOS
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -21,24 +20,37 @@ grid_string = '''
 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
-'''.strip()
-for line in grid_string.splitlines():
-    grid.append([int(number) for number in line.split()])
+EOS
 
-greatest_product = 0
-for y, row in enumerate(grid):
-    for x, col in enumerate(row):
-        for x_dir in range(-1, 2):
-            for y_dir in range(-1, 2):
-                if x_dir == 0 and y_dir == 0: continue
-                product = 1
-                for i in range(4):
-                    x_pos = x + (i * x_dir)
-                    y_pos = y + (i * y_dir)
-                    if (x_pos < 0 or y_pos < 0): break
-                    elif (y_pos >= len(grid) or x_pos >= len(row)): break
-                    product *= grid[y_pos][x_pos]
-                if product > greatest_product:
-                    greatest_product = product
+grid = []
+grid_string.each_line do |line|
+	grid.push line.split
+end
 
-print greatest_product
+directions = []
+(-1..1).each do |x|
+	(-1..1).each do |y|
+		directions.push([x, y]) unless x == 0 && y == 0
+	end
+end
+
+max = 0
+grid.each_with_index do |row, y|
+	row.each_with_index	do |cell, x|
+		directions.each do |x_dir, y_dir|
+			product = 1
+			4.times do |i|
+				x_pos = x + i * x_dir
+				y_pos = y + i * y_dir
+				unless (x_pos < 0 || x_pos >= row.length) || (y_pos < 0 || y_pos >= grid.length)
+					product *= grid[y_pos][x_pos].to_i
+				end
+			end
+			if product > max
+				max = product
+			end
+		end
+	end
+end
+puts max
+
