@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 from itertools import *
 
-def is_pandigital(n, length=10):
-    digits = sorted([int(digit) for digit in str(n)])
-    if digits == range(length):
-        return True
-    return False
-
 def has_property(digits):
     primes = [1,2,3,5,7,11,13,17]
     for i in range(1, len(digits)-2):
