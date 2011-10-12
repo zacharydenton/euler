@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 from itertools import *
 from string import *
 from collections import defaultdict
@@ -33,7 +34,7 @@ def is_english(plaintext):
     return False
 
 def main():
-    cipher = [int(c) for c in open('cipher1.txt').read().strip().split(',')]
+    cipher = [int(c) for c in open(os.path.join(os.path.dirname(__file__), 'cipher1.txt')).read().strip().split(',')]
 
     candidates = ascii_lowercase
 

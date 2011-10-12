@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import os
+
 def find_sum(triangle):
     def get_options(row, index):
         return triangle[row+1][index], triangle[row+1][index+1]
@@ -13,7 +15,7 @@ def find_sum(triangle):
             return triangle[0][0]
 
 def main():
-    triangle = [[int(digit) for digit in line.split()] for line in open('triangle.txt').readlines()]
+    triangle = [[int(digit) for digit in line.split()] for line in open(os.path.join(os.path.dirname(__file__), 'triangle.txt')).readlines()]
     print find_sum(triangle)
 
 if __name__ == "__main__":

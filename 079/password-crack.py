@@ -1,9 +1,10 @@
 #!/usr/bin/env python
+import os
 from itertools import *
 from collections import defaultdict
 
 def main():
-    attempts = [line.strip() for line in open('keylog.txt').readlines()]
+    attempts = [line.strip() for line in open(os.path.join(os.path.dirname(__file__), 'keylog.txt')).readlines()]
     appearances = defaultdict(list)
     for attempt in attempts:
         for i, n in enumerate(attempt):

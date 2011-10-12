@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 from string import ascii_uppercase
 
 def calculate_score(name, index):
@@ -6,7 +7,7 @@ def calculate_score(name, index):
     return index * alpha_score
 
 def main():
-    names_file = open('names.txt')
+    names_file = open(os.path.join(os.path.dirname(__file__), 'names.txt'))
     names_string = names_file.read()
     names = [name.strip('"') for name in names_string.split(',')] 
     names.sort()
