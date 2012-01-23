@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import re
 import fractions
 
 def root_two(iterations):
