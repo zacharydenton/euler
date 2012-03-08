@@ -2,7 +2,7 @@
 
 class Numeric
   def divisible_to?(x)
-    self > 0 and (1..x).all? { |i| self % i == 0 }
+    self > 0 and x.downto(1).all? { |i| self % i == 0 }
   end
 end
 
@@ -22,4 +22,3 @@ def divisible_to(x)
 end
 
 puts divisible_to(20)
-
