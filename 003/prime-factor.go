@@ -27,13 +27,15 @@ func eratosthenes(max int) []int {
 		}
 	}
 	// filter out all marked numbers
-	primes := make([]int, 0)
+	primes := make([]int, max)
+	j := 0
 	for i := range nums {
 		if nums[i] == 0 {
-			primes = append(primes, i+1)
+			primes[j] = i + 1
+			j++
 		}
 	}
-	return primes
+	return primes[:j]
 }
 
 func main() {
@@ -42,6 +44,7 @@ func main() {
 	m := new(big.Int)
 	max := int(math.Sqrt(600851475143))
 	primes := eratosthenes(max)
+	// find the largest prime factor of n
 	for i := len(primes) - 1; i >= 0; i-- {
 		p := big.NewInt(int64(primes[i]))
 		m.Mod(n, p)
