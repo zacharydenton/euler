@@ -12,12 +12,10 @@ def digits(n):
     return map(int, str(n))
 
 def is_increasing(n):
-    ds = digits(n)
-    return ds != sorted(ds)
+    return all(prev <= curr for prev, curr in pairwise(digits(n)))
 
 def is_decreasing(n):
-    ds = digits(n)
-    return ds != reversed(sorted(ds))
+    return all(prev >= curr for prev, curr in pairwise(digits(n)))
 
 def is_bouncy(n):
     return not is_increasing(n) and not is_decreasing(n)
