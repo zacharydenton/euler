@@ -21,11 +21,11 @@ def is_bouncy(n):
     return not is_increasing(n) and not is_decreasing(n)
 
 def main():
-    bouncy = 0
+    bouncy = 0.0
     for n in count(1):
         if is_bouncy(n):
             bouncy += 1
-        if Fraction(bouncy, n) == Fraction(99, 100):
+        if bouncy / n == 0.99:
             print n
             break
 

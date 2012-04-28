@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'prime'
+
+def f(n)
+  3 ** n.prime_division.length
+end
+
+def g(n)
+  (1..n).map { |i| f(i) }.reduce(:+)
+end
+
+puts g(100000)
