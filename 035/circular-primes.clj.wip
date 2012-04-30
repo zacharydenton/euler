@@ -1,9 +1,5 @@
 #!/usr/bin/env clojure
 
-(ns circular-primes
-  (:use clojure.string)
-  (:use clojure.contrib.seq-utils))
-
 (defn digits [number]
   (map #(- (int %) 48) (str number))) 
 
