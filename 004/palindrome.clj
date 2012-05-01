@@ -1,15 +1,8 @@
 #!/usr/bin/env clojure
-(defn palindrome? [string]
-  (= (seq string) (reverse string)))
-
-(defn palindrome-number? [number]
-  (palindrome? (str number)))
-
-(defn combine [lst1 lst2]
-  (mapcat (fn [x] (map #(list % x) lst1)) lst2))
+(defn palindrome? [n]
+  (= (seq (str n)) (reverse (str n))))
 
 (defn palindromes [limit]
-  (filter palindrome-number? (map #(reduce * %) (combine (range limit) (range limit)))))
+  (filter palindrome? (for [a (range 100 1000) b (range a 1000)] (* a b))))
 
-(println (last (sort (set (palindromes 1000)))))
-
+(println (reduce max (palindromes 1000)))
