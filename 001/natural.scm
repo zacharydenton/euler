@@ -1,11 +1,7 @@
-(define (multiple-sum)
-  (define (multiple-sum-iter n sum)
-    (cond ((>= n 1000) sum)
-	  ((or (= (remainder n 3) 0)
-	       (= (remainder n 5) 0))
-	   (multiple-sum-iter (+ n 1) (+ sum n)))
-	  (else (multiple-sum-iter (+ n 1) sum))))
-  (multiple-sum-iter 0 0))
-
-(display (multiple-sum))
+(display
+  (reduce + 0
+		  (filter
+			(lambda (n)
+			  (or (= (remainder n 3) 0) (= (remainder n 5) 0)))
+			(iota 1000))))
 (newline)
