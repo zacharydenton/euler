@@ -1,5 +1,4 @@
 #!/usr/bin/env clojure
-
 (defn ** [x n]
   (. (. java.math.BigInteger (valueOf x)) (pow n)))
 

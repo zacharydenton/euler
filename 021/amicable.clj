@@ -1,7 +1,6 @@
 #!/usr/bin/env clojure
 (defn divisors [n]
-    "Returns a list of the proper divisors of n."
-    (filter #(zero? (mod n %)) (range 1 (+ 1 (/ n 2)))))
+  (filter #(zero? (mod n %)) (range 1 (+ 1 (/ n 2)))))
 
 (defn d [n]
   (reduce + (divisors n)))
