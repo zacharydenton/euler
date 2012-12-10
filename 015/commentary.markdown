@@ -17,10 +17,10 @@ the 1st element in the 2nd row, the 2nd element in the 4th row, and the 3rd elem
 in the 6th row, respectively. (Note that Pascal's Triangle is zero-indexed.)
 
 The [binomial coefficient](http://en.wikipedia.org/wiki/Binomial_coefficient)
-\\(\\binom {n} {k}\\) can be used to determine the \\(k\\)th element in the
-\\(n\\)th row of Pascal's Triangle. Thus, we could express the aforementioned solutions as
-\\(\\binom {2} {1}\\), \\(\\binom {4} {2}\\), and \\(\\binom {6} {3}\\), respectively.
+$\binom {n} {k}$ can be used to determine the $k$th element in the
+$n$th row of Pascal's Triangle. Thus, we could express the aforementioned solutions as
+$\binom {2} {1}$, $\binom {4} {2}$, and $\binom {6} {3}$, respectively.
 
-Thus, a general solution for grids of size \\(x\\) is 
+Thus, a general solution for grids of size $x$ is 
 
-\\[routes = \\binom {2x} {x}\\].
+$$routes = \binom {2x} {x}$$.

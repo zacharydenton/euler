@@ -1,6 +1,6 @@
 The critical insight of this problem is this:
 
-\[ divisibleto(x) = n \times divisibleto(x-1) \]
+$$divisibleto(x) = n \times divisibleto(x-1)$$
 
 This means that when searching for the smallest number divisible to 20,
 we can increment by the smallest number divisible to 19 each time (since the 
