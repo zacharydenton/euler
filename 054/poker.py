@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 from itertools import *
 from operator import itemgetter
 
@@ -85,7 +86,7 @@ def winner(hands):
     return int(score(hands[0]) < score(hands[1])) + 1
 
 def main():
-    with open('poker.txt') as f:
+    with open(os.path.join(os.path.dirname(__file__), 'poker.txt')) as f:
         print sum(1 for hands in parse_hands(f) if winner(hands) == 1)
 
 if __name__ == "__main__":
