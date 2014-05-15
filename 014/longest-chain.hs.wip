@@ -1,8 +1,0 @@
-memoized_collatz :: Int -> Integer
-memoized_collatz = (map collatz [0 ..] !!)
-    where collatz 1 = 1
-          collatz n | even n    = 1 + memoized_collatz (n `div` 2)
-                    | otherwise = 1 + memoized_collatz (3*n + 1)
-
-
-main = print $ fst $ maximum [(memoized_collatz n, n) | n <- [1..10000]]
