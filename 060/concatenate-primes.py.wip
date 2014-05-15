@@ -21,32 +21,19 @@ def primes(n):
         m=2*i+3
     return [2]+[x for x in s if x]
 
-# sqrt(1000000000) = 31622
-__primes = primes(31622)
-def is_prime(n):
-    # if prime is already in the list, just pick it
-    if n <= 31622:
-        i = bisect_left(__primes, n)
-        return i != len(__primes) and __primes[i] == n
-    # Divide by each known prime
-    limit = int(n ** .5)
-    for p in __primes:
-        if p > limit: return True
-        if n % p == 0: return False
-    # fall back on trial division if n > 1 billion
-    for f in range(31627, limit, 6): # 31627 is the next prime
-        if n % f == 0 or n % (f + 4) == 0:
-            return False
-    return True
-
 def concatenations(numbers):
     for p in permutations(numbers, 2):
         yield int(''.join(map(str, p)))
 
 def main():
+    # sqrt(1000000000) = 31622
+    __primes = set(islice(primes(31622), 1, None))
+
     for combination in combinations(primes(1000), 4):
-        c = list(concatenations(combination))
-        print combination, c
+        c = concatenations(combination)
+        if all(p in __primes for p in c):
+            print(combination)
+            return
 
 if __name__ == "__main__":
     main()
