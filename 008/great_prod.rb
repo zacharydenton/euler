@@ -24,9 +24,9 @@ EOS
 numbers = numbers.split.join('')
 max = 0
 numbers.split('').each_with_index do |char, i|
-    product = numbers[i..i+4].each_char.inject(1) {|product, digit| product * digit.to_i}
-    if product > max
-        max = product
-    end
+  product = numbers[i..i+4].each_char.inject(1) {|product, digit| product * digit.to_i}
+  if product > max
+    max = product
+  end
 end
 puts max

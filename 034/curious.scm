@@ -3,8 +3,8 @@
 
 (define (digits n)
   (if (zero? n)
-      '()
-      (cons (remainder n 10) (digits (quotient n 10)))))
+    '()
+    (cons (remainder n 10) (digits (quotient n 10)))))
 
 (define (curious? n)
   (and (= (apply + (map factorial (digits n))) n)

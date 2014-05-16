@@ -24,33 +24,33 @@ EOS
 
 grid = []
 grid_string.each_line do |line|
-	grid.push line.split
+  grid.push line.split
 end
 
 directions = []
 (-1..1).each do |x|
-	(-1..1).each do |y|
-		directions.push([x, y]) unless x == 0 && y == 0
-	end
+  (-1..1).each do |y|
+    directions.push([x, y]) unless x == 0 && y == 0
+  end
 end
 
 max = 0
 grid.each_with_index do |row, y|
-	row.each_with_index	do |cell, x|
-		directions.each do |x_dir, y_dir|
-			product = 1
-			4.times do |i|
-				x_pos = x + i * x_dir
-				y_pos = y + i * y_dir
-				unless (x_pos < 0 || x_pos >= row.length) || (y_pos < 0 || y_pos >= grid.length)
-					product *= grid[y_pos][x_pos].to_i
-				end
-			end
-			if product > max
-				max = product
-			end
-		end
-	end
+  row.each_with_index	do |cell, x|
+    directions.each do |x_dir, y_dir|
+      product = 1
+      4.times do |i|
+        x_pos = x + i * x_dir
+        y_pos = y + i * y_dir
+        unless (x_pos < 0 || x_pos >= row.length) || (y_pos < 0 || y_pos >= grid.length)
+          product *= grid[y_pos][x_pos].to_i
+        end
+      end
+      if product > max
+        max = product
+      end
+    end
+  end
 end
 puts max
 

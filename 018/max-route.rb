@@ -20,9 +20,9 @@ EOS
 triangle = triangle_str.each_line.map { |line| line.split.map(&:to_i) }
 
 (triangle.length - 2).downto(0) do |y|
-	triangle[y].length.times do |x| 
-		triangle[y][x] += [triangle[y+1][x], triangle[y+1][x+1]].max
-	end
+  triangle[y].length.times do |x| 
+    triangle[y][x] += [triangle[y+1][x], triangle[y+1][x+1]].max
+  end
 end
 
 puts triangle[0][0]

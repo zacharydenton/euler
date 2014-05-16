@@ -3,11 +3,11 @@ import "fmt"
 import "math/big"
 
 func main() {
-	a := big.NewInt(28433*2)
-	b := big.NewInt(7830457)
-	x := big.NewInt(0).Add(big.NewInt(1), big.NewInt(0).Exp(a, b, nil))
-	fmt.Println(x)
-	//s := fmt.Sprintf("%d", x)
-	//fmt.Println(s[-10:])
+a := big.NewInt(28433*2)
+       b := big.NewInt(7830457)
+       x := big.NewInt(0).Add(big.NewInt(1), big.NewInt(0).Exp(a, b, nil))
+       fmt.Println(x)
+       //s := fmt.Sprintf("%d", x)
+       //fmt.Println(s[-10:])
 }
 
