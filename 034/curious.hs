@@ -6,7 +6,6 @@ digits 0 = []
 digits n = r : digits q
     where (q, r) = quotRem n 10
 
-
 curious :: Int -> Bool
 curious n = n == sum (map factorial (digits n))
 
