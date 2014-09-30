@@ -1,9 +1,9 @@
 #!/usr/bin/env clojure
-(defn ** [x n]
+(defn raise [x n]
   (. (. java.math.BigInteger (valueOf x)) (pow n)))
 
 (defn raise-to-itself [number]
-  (** number number))
+  (raise number number))
 
 (defn digits [n]
   (map #(- (int %) 48) (str n)))
