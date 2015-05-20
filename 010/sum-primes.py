@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from itertools import takewhile
+
 def eratosthenes():
     '''Yields the sequence of prime numbers via the Sieve of Eratosthenes.'''
     D = {}  # map composite integers to primes witnessing their compositeness

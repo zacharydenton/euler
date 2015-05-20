@@ -13,13 +13,13 @@ def factorize(n):
         res.append(2)
         n //= 2
     # try odd numbers up to sqrt(n)
-    limit = math.sqrt(n+1)
+    limit = math.sqrt(n + 1)
     i = 3
     while i <= limit:
         if n % i == 0:
             res.append(i)
             n //= i
-            limit = math.sqrt(n+i)
+            limit = math.sqrt(n + i)
         else:
             i += 2
     if n != 1:
@@ -33,7 +33,7 @@ def triangle(n):
     try:
         return _triangle_cache[n]
     except KeyError:
-        result = n + triangle(n-1)
+        result = n + triangle(n - 1)
         _triangle_cache[n] = result
         return result
 
@@ -50,6 +50,6 @@ def num_divisors(n):
     except:
         return 1
 
-triangles = (triangle(i) for i in range(1,100000))
+triangles = (triangle(i) for i in range(1, 100000))
 divisible_triangles = (i for i in triangles if num_divisors(i) > 500)
 print divisible_triangles.next()
