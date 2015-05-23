@@ -12,4 +12,4 @@ largestProduct = maximum . map product
 main :: IO ()
 main = do
         str <- readFile "/home/zach/code/euler/008/numbers.txt"
-        print $ largestProduct $ chunks 5 $ parse str
+        print $ largestProduct $ chunks 13 $ parse str

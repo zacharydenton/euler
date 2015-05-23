@@ -26,7 +26,7 @@ greatest_product = 0
 
 for i in range(len(numstring)):
     product = 1
-    substring = numstring[i:i+5]
+    substring = numstring[i:i+13]
     for digit in substring:
         product *= int(digit)
     if product > greatest_product:
