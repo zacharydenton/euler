@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func IsPalindrome(number int) bool {
 	n := number
 	reversed, digit := 0, 0
@@ -21,5 +23,5 @@ func main() {
 			}
 		}
 	}
-	println(max)
+	fmt.Println(max)
 }

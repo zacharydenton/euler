@@ -36,7 +36,7 @@ end
 
 max = 0
 grid.each_with_index do |row, y|
-  row.each_with_index	do |cell, x|
+  row.each_with_index do |cell, x|
     directions.each do |x_dir, y_dir|
       product = 1
       4.times do |i|

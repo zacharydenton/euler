@@ -1,5 +1,6 @@
 package main
 
+import "fmt"
 import "math"
 import "math/big"
 
@@ -48,7 +49,7 @@ func main() {
 		p := big.NewInt(int64(primes[i]))
 		m.Mod(n, p)
 		if m.Int64() == 0 {
-			println(p)
+			fmt.Println(p)
 			break
 		}
 	}
