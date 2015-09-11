@@ -1,3 +1,3 @@
 #!/usr/bin/env python
-import gmpy
-print(str(gmpy.mpz(28433*2**7830457+1))[-10:])
+from gmpy2 import mpz
+print(str(mpz(28433*2**7830457+1))[-10:])
