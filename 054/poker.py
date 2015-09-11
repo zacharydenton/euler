@@ -70,7 +70,7 @@ def groups(cards, length):
 def pairwise(cards):
     a, b = tee(value for value, suit in cards)
     next(b, None)
-    return izip(a, b)
+    return zip(a, b)
 
 def suits(cards):
     return list({suit for value, suit in cards})
@@ -87,7 +87,7 @@ def winner(hands):
 
 def main():
     with open(os.path.join(os.path.dirname(__file__), 'poker.txt')) as f:
-        print sum(1 for hands in parse_hands(f) if winner(hands) == 1)
+        print(sum(1 for hands in parse_hands(f) if winner(hands) == 1))
 
 if __name__ == "__main__":
     main()

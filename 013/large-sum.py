@@ -101,4 +101,4 @@ digits_string = '''
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690
 '''
-print str(sum(long(line.strip()) for line in digits_string.strip().splitlines()))[:10]
+print(str(sum(int(line.strip()) for line in digits_string.strip().splitlines()))[:10])

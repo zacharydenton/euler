@@ -5,14 +5,14 @@ def ways_to_change(target, coins):
     else:
         coins = sorted(coins)
         largest = coins[-1]
-        uses = target / largest
+        uses = target // largest
         total = 0
         for i in range(uses + 1):
             total += ways_to_change(target - largest * i, coins[:-1])
         return total
 
 def main():
-    print ways_to_change(200, [1, 2, 5, 10, 20, 50, 100, 200])
+    print(ways_to_change(200, [1, 2, 5, 10, 20, 50, 100, 200]))
 
 if __name__ == "__main__":
     main()

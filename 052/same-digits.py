@@ -17,7 +17,7 @@ def main():
         n += 1
         if same_digits(n,6):
             found = True
-    print n
+    print(n)
 
 if __name__ == "__main__":
     main()

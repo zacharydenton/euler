@@ -18,4 +18,4 @@ def nth_prime(n):
         if i == n - 1:
             return prime
 
-print nth_prime(10001)
+print(nth_prime(10001))

@@ -21,4 +21,4 @@ def factorize(n):
         res.append(n)
     return res
 
-print max(factorize(600851475143))
+print(max(factorize(600851475143)))

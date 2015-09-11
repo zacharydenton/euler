@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import math
 from operator import mul
+from functools import reduce
 
 def prime_factors(n):
     res = set()
@@ -30,6 +31,6 @@ def farey_length(n):
     return sum(totient(m) for m in range(1, n+1)) - 1
 
 def main():
-    print farey_length(1000000)
+    print(farey_length(1000000))
 
 if __name__ == "__main__": main()

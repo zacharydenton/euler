@@ -31,9 +31,9 @@ def distinct_prime_factors(n):
 def main():
     chain = []
     search = 4
-    for n in range(1,1000000):
+    for n in range(1, 1000000):
         if len(distinct_prime_factors(n)) == search:
             chain.append(n)
-    print (chain[i:i+search] for i, n in enumerate(chain) if chain[i:i+search] == range(n, n+search)).next()[0]
-if __name__ == "__main__":
-    main()
+    print(next(chain[i:i+search] for i, n in enumerate(chain) if chain[i:i+search] == list(range(n, n+search)))[0])
+
+if __name__ == "__main__": main()

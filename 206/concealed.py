@@ -10,7 +10,7 @@ def is_concealed(n):
     return all(digits[i] == template[i] for i in range(0, len(digits), 2))
 
 def main():
-    print (n for n in xrange(1000000000, 1390000000, 10)
-        if (n % 100 == 30 or n % 100 == 70) and is_concealed(n*n)).next()
+    print(next((n for n in range(1000000000, 1390000000, 10)
+        if (n % 100 == 30 or n % 100 == 70) and is_concealed(n*n))))
 
 if __name__ == "__main__": main()

@@ -44,7 +44,7 @@ def to_english(number):
             number = abs(number)
 
         if number >= 1000:
-            output += _ones[number / 1000]
+            output += _ones[number // 1000]
             if number % 1000 == 0:
                 output += " thousand"
             else:
@@ -52,7 +52,7 @@ def to_english(number):
             number %= 1000
 
         if number >= 100:
-            output += _ones[number / 100]
+            output += _ones[number // 100]
             if number % 100 == 0:
                 output += " hundred"
             else:
@@ -60,7 +60,7 @@ def to_english(number):
             number %= 100
 
         if number >= 20:
-            output += _tens[number / 10]
+            output += _tens[number // 10]
             number %= 10
             if number % 10 in _ones:
                 output += '-'
@@ -76,4 +76,4 @@ def cleanse_string(string):
     string = string.replace('-', '')
     return string
 
-print sum(len(cleanse_string(to_english(i))) for i in range(1, 1001))
+print(sum(len(cleanse_string(to_english(i))) for i in range(1, 1001)))

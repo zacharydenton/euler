@@ -31,7 +31,7 @@ def main():
     04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'''
 
     triangle = [[int(digit) for digit in line.strip().split()] for line in triangle_str.splitlines()]
-    print find_sum(triangle)
+    print(find_sum(triangle))
 
 if __name__ == "__main__":
     main()

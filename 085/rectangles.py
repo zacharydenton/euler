@@ -9,6 +9,6 @@ def f(x, y):
 
 def main():
     candidates = ((x, y) for x in range(1000) for y in range(1000))
-    print(mul(*min((f(*pair), pair) for pair in candidates)[1]))
+    print((mul(*min((f(*pair), pair) for pair in candidates)[1])))
 
 if __name__ == "__main__": main()

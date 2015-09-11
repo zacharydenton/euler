@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 def is_divisible_to(number, x):
-    for i in reversed(range(1, x+1)):
+    for i in reversed(list(range(1, x+1))):
         if number % i != 0:
             return False
     return True
@@ -19,4 +19,4 @@ def divisible_to(x):
             found = is_divisible_to(number, x)
         return number
 
-print divisible_to(20)
+print(divisible_to(20))

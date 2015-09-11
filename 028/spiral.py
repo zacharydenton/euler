@@ -13,4 +13,4 @@ def sum_diagonals_of_spiral(size):
             since_last = 0
     return total
 
-print sum_diagonals_of_spiral(1001)
+print(sum_diagonals_of_spiral(1001))

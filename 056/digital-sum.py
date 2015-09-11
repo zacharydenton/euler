@@ -6,11 +6,11 @@ def get_digits(n):
 
 def main():
     largest = 0
-    for a, b in product(range(1, 100), range(1, 100)):
+    for a, b in product(list(range(1, 100)), list(range(1, 100))):
         s = sum(get_digits(a ** b))
         if s > largest:
             largest = s
-    print largest
+    print(largest)
 
 if __name__ == "__main__":
     main()

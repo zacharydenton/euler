@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import math
 from collections import defaultdict
+from functools import reduce
 
 def factorize(n):
     if n < 1:
@@ -75,7 +76,7 @@ def main():
 
         ratio =  float(primes) / float(i+1)
         if 0 < ratio < 0.1:
-            print side_length
+            print(side_length)
             return
 
 if __name__ == "__main__":

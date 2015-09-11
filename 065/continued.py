@@ -24,4 +24,4 @@ def rationalize(frac):
         return (frac[0] * num + denom, num)
 
 numerator = rationalize(take(e(), 100))[0]
-print sum(int(d) for d in str(numerator))
+print(sum(int(d) for d in str(numerator)))

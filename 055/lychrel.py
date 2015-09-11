@@ -21,7 +21,7 @@ def main():
     for n in range(10000):
         if is_lychrel(n):
             count += 1
-    print count 
+    print(count) 
 
 if __name__ == "__main__":
     main()

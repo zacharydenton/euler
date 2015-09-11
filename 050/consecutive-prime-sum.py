@@ -4,13 +4,13 @@ def euler(n):
     # Create a candidate list within which non-primes will
     # marked as None, noting that only candidates below
     # sqrt(n) need be checked. 
-    candidates = range(n+1)
+    candidates = list(range(n+1))
     fin = int(n**0.5)
  
     # Loop over the candidates, marking out each multiple.
     # If the current candidate is already checked off then
     # continue to the next iteration.
-    for i in xrange(2, fin+1):
+    for i in range(2, fin+1):
         if not candidates[i]:
             continue
  
@@ -36,7 +36,7 @@ def main():
                 c = seq[:i]
                 if len(c) > len(chain):
                     chain = c
-    print sum(chain)
+    print(sum(chain))
 
 if __name__ == "__main__":
     main()

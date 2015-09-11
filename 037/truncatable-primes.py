@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from collections import defaultdict
 import math
+from functools import reduce
 
 def factorize(n):
     if n < 1:
@@ -35,7 +36,7 @@ def num_divisors(n):
     # incremented exponents of prime factors
     from operator import mul
     try:
-        return reduce(mul, [exponent + 1 for exponent in histogram.values()])
+        return reduce(mul, [exponent + 1 for exponent in list(histogram.values())])
     except:
         return 1
 
@@ -61,7 +62,7 @@ def is_truncatable(prime):
     return True
 
 def main():
-    print sum(n for n in range(1, 1000000) if is_truncatable(n))
+    print(sum(n for n in range(1, 1000000) if is_truncatable(n)))
 
 if __name__ == "__main__":
     main()

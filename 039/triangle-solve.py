@@ -12,10 +12,10 @@ def calculate_solutions(limit):
             
 def main():
     solutions = calculate_solutions(500)
-    most = max(len(s) for s in solutions.values())
+    most = max(len(s) for s in list(solutions.values()))
     for p, s in sorted(solutions.items()):
         if len(s) == most:
-            print p
+            print(p)
 
 if __name__ == "__main__":
     main()

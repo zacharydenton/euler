@@ -45,6 +45,6 @@ def main():
         matrix = parse(matfile)
     targets = [(len(matrix) - 1, len(matrix[0]) - 1)]
     sources = [(0, 0)]
-    print sum(matrix[y][x] for (x, y) in astar(matrix, targets, sources))
+    print(sum(matrix[y][x] for (x, y) in astar(matrix, targets, sources)))
 
 if __name__ == "__main__": main()

@@ -63,8 +63,8 @@ def convert_list_to_int(l):
     return int(''.join(str(d) for d in l))
 
 def main():
-    pandigitals = (convert_list_to_int(p) for p in permutations(range(1,8)))
-    print(max(p for p in pandigitals if is_prime(p)))
+    pandigitals = (convert_list_to_int(p) for p in permutations(list(range(1,8))))
+    print((max(p for p in pandigitals if is_prime(p))))
 
 if __name__ == "__main__":
     main()

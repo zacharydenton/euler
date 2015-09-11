@@ -13,6 +13,7 @@
 import math
 from itertools import *
 from collections import defaultdict
+from functools import reduce
 
 def factorize(n):
     if n < 1:
@@ -71,7 +72,7 @@ def is_prime(num):
         return False
 
 def sieve(n):
-    numbers = range(2, n+1)
+    numbers = list(range(2, n+1))
     p = 2
     j = 0
     done = False
@@ -99,7 +100,7 @@ def arithmetic_subsequences(seq, length=3):
 
 def main():
     primes = [p for p in sieve(10000) if len(str(p)) == 4]
-    print max(''.join(str(x) for x in seq) for seq in arithmetic_subsequences(primes, 3) if is_permutations(seq))
+    print(max(''.join(str(x) for x in seq) for seq in arithmetic_subsequences(primes, 3) if is_permutations(seq)))
 
 if __name__ == "__main__":
     main()

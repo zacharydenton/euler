@@ -8,14 +8,14 @@ def primes(n):
         return [2]
     elif n < 2:
         return []
-    sieve = range(3, n+1, 2)
+    sieve = list(range(3, n+1, 2))
     mroot = n ** 0.5
-    half = (n + 1) / 2 - 1
+    half = (n + 1) // 2 - 1
     i = 0
     m = 3
     while m <= mroot:
         if sieve[i]:
-            j = (m * m - 3) / 2
+            j = (m * m - 3) // 2
             sieve[j] = 0
             while j < half:
                 sieve[j] = 0
@@ -32,6 +32,6 @@ def main():
         if ratio < minimum[0] and sorted(str(n)) == sorted(str(t)):
             minimum = (ratio, n)
 
-    print minimum[1]
+    print(minimum[1])
 
 if __name__ == "__main__": main()

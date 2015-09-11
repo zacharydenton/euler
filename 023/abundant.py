@@ -66,7 +66,7 @@ def classify(n):
 def main():
     abundant = set(number for number in range(2, 30000) if classify(number) == 1)
     sums = sorted(set(sum(c) for c in combinations_with_replacement(abundant, 2)))
-    print(sum(number for number in range(1,30000) if number not in sums))
+    print((sum(number for number in range(1,30000) if number not in sums)))
     
 if __name__ == "__main__":
     main()

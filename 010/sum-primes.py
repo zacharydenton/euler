@@ -15,4 +15,4 @@ def eratosthenes():
             del D[q]       # no longer need D[q], free memory
         q += 1
 
-print sum(takewhile(lambda x: x < 2000000, eratosthenes()))
+print(sum(takewhile(lambda x: x < 2000000, eratosthenes())))

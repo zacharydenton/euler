@@ -18,7 +18,7 @@ def main():
     for word in words:
         if word_value(word) in triangle_numbers:
             total += 1
-    print total
+    print(total)
 
 if __name__ == "__main__":
     main()

@@ -21,7 +21,7 @@ def main():
             product = multiplicand * multiplier
             if is_pandigital(multiplicand, multiplier, product, length=9):
                 pandigitals.add(product)
-    print sum(pandigitals)
+    print(sum(pandigitals))
 
 if __name__ == "__main__":
     main()

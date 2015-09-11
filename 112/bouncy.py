@@ -5,10 +5,10 @@ def pairwise(iterable):
     "s -> (s0,s1), (s1,s2), (s2, s3), ..."
     a, b = tee(iterable)
     next(b, None)
-    return izip(a, b)
+    return zip(a, b)
 
 def digits(n):
-    return map(int, str(n))
+    return list(map(int, str(n)))
 
 def is_increasing(n):
     return all(prev <= curr for prev, curr in pairwise(digits(n)))
@@ -27,7 +27,7 @@ def running_total(iterable):
 
 def main():
     nums = count(1)
-    bouncy = running_total(imap(lambda n: float(is_bouncy(n)), count(1)))
-    print (n for n, b in izip(nums, bouncy) if b / n == 0.99).next()
+    bouncy = running_total(map(lambda n: float(is_bouncy(n)), count(1)))
+    print(next((n for n, b in zip(nums, bouncy) if b / n == 0.99)))
 
 if __name__ == "__main__": main()

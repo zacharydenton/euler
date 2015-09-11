@@ -3,6 +3,7 @@ from collections import defaultdict
 from itertools import product
 from operator import mul
 import math
+from functools import reduce
 
 def factorize(n):
     if n < 1:
@@ -37,7 +38,7 @@ def num_divisors(n):
     # incremented exponents of prime factors
     from operator import mul
     try:
-        return reduce(mul, [exponent + 1 for exponent in histogram.values()])
+        return reduce(mul, [exponent + 1 for exponent in list(histogram.values())])
     except:
         return 1
 
@@ -59,13 +60,13 @@ def is_prime(num):
 def main():
     most = 0
     best = (0, 0)
-    for a, b in product(range(-999,1000), range(-999, 1000)):
+    for a, b in product(list(range(-999,1000)), list(range(-999, 1000))):
         formula = lambda n: n**2 + a*n + b
         num = num_primes(formula) 
         if num > most:
             most = num
             best = (a, b)
-    print mul(*best)
+    print(mul(*best))
 
 if __name__ == "__main__":
     main()

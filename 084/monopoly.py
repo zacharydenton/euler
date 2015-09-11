@@ -20,7 +20,7 @@ transitions = {
     "CC2": build_deck(["CC2", "CC2", "CC2", "CC2", "CC2", "CC2", "CC2", "CC2", "CC2", "CC2", "CC2", "CC2", "CC2", "CC2", "GO", "JAIL"]),
     "CC3": build_deck(["CC3", "CC3", "CC3", "CC3", "CC3", "CC3", "CC3", "CC3", "CC3", "CC3", "CC3", "CC3", "CC3", "CC3", "GO", "JAIL"])
 }
-transitions = {square_numbers[square]: deck for square, deck in transitions.items()}
+transitions = {square_numbers[square]: deck for square, deck in list(transitions.items())}
 
 def transition(square_number):
     while square_number in transitions:
@@ -48,6 +48,6 @@ def simulate(iterations=2000000, die_size=6):
 
 def main():
     simulation = simulate(die_size=4)
-    print("".join("{:02}".format(square_number) for square_number, count in simulation.most_common(3)))
+    print(("".join("{:02}".format(square_number) for square_number, count in simulation.most_common(3))))
 
 if __name__ == "__main__": main()

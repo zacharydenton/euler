@@ -13,7 +13,7 @@ def convert_list_to_int(l):
 
 def main():
     pandigitals = permutations((str(i) for i in range(10)))
-    print sum(convert_list_to_int(p) for p in pandigitals if has_property(p))
+    print(sum(convert_list_to_int(p) for p in pandigitals if has_property(p)))
 
 if __name__ == "__main__":
     main()

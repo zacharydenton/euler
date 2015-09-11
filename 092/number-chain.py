@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 def get_digits(n):
-    return map(int, str(n))
+    return list(map(int, str(n)))
 
 def classify(n):
     return ''.join(sorted(str(n)))
@@ -39,7 +39,7 @@ def chain(start):
         return False
 
 def main():
-    print len(filter(lambda x: x, map(chain, range(1, 10000000))))
+    print(len([x for x in map(chain, list(range(1, 10000000))) if x]))
 
 if __name__ == "__main__":
     main()

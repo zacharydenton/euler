@@ -21,7 +21,7 @@ def dijkstra(matrix):
     dest = (len(matrix[0]) - 1, len(matrix) - 1)
     unvisited = set((x, y) for x in range(dest[0] + 1) for y in range(dest[1] + 1))
     nodes = {}
-    for node in unvisited: nodes[node] = sys.maxint
+    for node in unvisited: nodes[node] = sys.maxsize
     nodes[current] = value(current)
 
     while 1:
@@ -44,7 +44,7 @@ def main():
         for row in matfile:
             matrix.append([int(n) for n in row.split(',')])
 
-    print dijkstra(matrix)
+    print(dijkstra(matrix))
 
 if __name__ == "__main__": main()
 

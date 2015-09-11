@@ -26,6 +26,6 @@ def main():
     squares = takewhile(lambda x: x < limit, (prime**2 for prime in primes))
     cubes = takewhile(lambda x: x < limit, (prime**3 for prime in primes))
     tesseracts = takewhile(lambda x: x < limit, (prime**4 for prime in primes))
-    print(len(set(s + c + t for (s, c, t) in product(squares, cubes, tesseracts) if s + c + t < limit)))
+    print((len(set(s + c + t for (s, c, t) in product(squares, cubes, tesseracts) if s + c + t < limit))))
 
 if __name__ == "__main__": main()

@@ -77,4 +77,4 @@ def date_sort(date):
     month,day,year = date_str.split('/')
     return int(month)*int(day)*int(year)
 
-print len([weekday for weekday in first_of_months.values() if weekday == 'sun'])
+print(len([weekday for weekday in list(first_of_months.values()) if weekday == 'sun']))

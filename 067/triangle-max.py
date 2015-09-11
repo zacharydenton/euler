@@ -16,7 +16,7 @@ def find_sum(triangle):
 
 def main():
     triangle = [[int(digit) for digit in line.split()] for line in open(os.path.join(os.path.dirname(__file__), 'triangle.txt')).readlines()]
-    print find_sum(triangle)
+    print(find_sum(triangle))
 
 if __name__ == "__main__":
     main()

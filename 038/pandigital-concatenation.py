@@ -18,10 +18,10 @@ def concatenated_product(number, n):
     try:
         return int(''.join(str(number * i) for i in range(1,n+1)))
     except ValueError:
-        print number, n
+        print(number, n)
 
 def main():
-    print max(concatenated_product(i, n) for i in range(10000) for n in range(1, 10) if is_pandigital(concatenated_product(i, n)))
+    print(max(concatenated_product(i, n) for i in range(10000) for n in range(1, 10) if is_pandigital(concatenated_product(i, n))))
 
 if __name__ == "__main__":
     main()

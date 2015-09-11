@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from fractions import *
 from itertools import *
+from functools import reduce
 
 def is_curious(n, d):
     f = Fraction(n, d)
@@ -17,8 +18,8 @@ def is_curious(n, d):
             pass
     return False
 def main():
-    fractions = product(range(10, 100), range(10, 100))
-    print reduce(lambda a, b: a * b, (Fraction(*f) for f in fractions if is_curious(*f))).denominator
+    fractions = product(list(range(10, 100)), list(range(10, 100)))
+    print(reduce(lambda a, b: a * b, (Fraction(*f) for f in fractions if is_curious(*f))).denominator)
 
 if __name__ == "__main__":
     main()

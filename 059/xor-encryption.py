@@ -10,7 +10,7 @@ dictionary = set(word.strip() for word in open('/usr/share/dict/words').readline
 def ncycle(iterable, n):
     c = cycle(iterable)
     for i in range(n):
-        yield c.next()
+        yield next(c)
 
 def decipher(cipher, password):
     key = list(ncycle(password, len(cipher)))
@@ -25,7 +25,7 @@ def is_english(plaintext):
     frequency = defaultdict(int)
     for char in plaintext:
         frequency[char] += 1
-    f = sorted(frequency.iteritems(), key=itemgetter(1), reverse=True)
+    f = sorted(iter(frequency.items()), key=itemgetter(1), reverse=True)
     top = [k for k,v in f[:4]]
     if ' ' in top and 'e' in top and 't' in top:
         words = plaintext.split()
@@ -43,7 +43,7 @@ def main():
         password = [ord(c) for c in p]
         plaintext = ''.join(list(decipher(cipher, password)))
         if is_english(plaintext):
-            print sum(ord(c) for c in plaintext)
+            print(sum(ord(c) for c in plaintext))
             return
 
 if __name__ == "__main__":

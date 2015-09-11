@@ -21,4 +21,4 @@ for line in open(os.path.join(os.path.dirname(__file__), 'roman.txt')):
     roman = line.strip()
     current += len(roman)
     improved += len(subtractive(roman))
-print current - improved
+print(current - improved)
