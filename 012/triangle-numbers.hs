@@ -20,10 +20,6 @@ factorize n = primeFactors n primes where
 primePowers :: Int -> [(Int, Int)]
 primePowers n = [(head x, length x) | x <- group $ factorize n]
 
-divisors :: Int -> [Int]
-divisors n = map product $ sequence
-    [take (k+1) $ iterate (p*) 1 | (p, k) <- primePowers n]
-
 numDivisors :: Int ->  Int
 numDivisors n = product [k + 1 | (_, k) <- primePowers n]
 
