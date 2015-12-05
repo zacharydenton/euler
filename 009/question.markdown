@@ -1,4 +1,4 @@
-A Pythagorean triplet is a set of three natural numbers, $a < b < c$, 
+A Pythagorean triplet is a set of three natural numbers, $a \lt b \lt c$, 
 for which
 
 $$a^2 + b^2 = c^2$$

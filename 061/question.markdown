@@ -5,10 +5,10 @@ following formulae:
 $$\begin{aligned}
 \text{Triangle } & P_{3,n}=\frac{n(n+1)}{2} & 1, 3, 6, 10, 15, ... \\
 \text{Square } & P_{4,n}=n^2 & 1, 4, 9, 16, 25, ... \\
-\text{Pentagonal } & P_{5,n}=\frac{n(3n−1)}{2} & 1, 5, 12, 22, 35, ... \\
-\text{Hexagonal } & P_{6,n}=n(2n−1) & 1, 6, 15, 28, 45, ... \\
-\text{Heptagonal } & P_{7,n}=\frac{n(5n−3)}{2} & 1, 7, 18, 34, 55, ... \\
-\text{Octagonal } & P_{8,n}=n(3n−2) & 1, 8, 21, 40, 65, ...
+\text{Pentagonal } & P_{5,n}=\frac{n(3n-1)}{2} & 1, 5, 12, 22, 35, ... \\
+\text{Hexagonal } & P_{6,n}=n(2n-1) & 1, 6, 15, 28, 45, ... \\
+\text{Heptagonal } & P_{7,n}=\frac{n(5n-3)}{2} & 1, 7, 18, 34, 55, ... \\
+\text{Octagonal } & P_{8,n}=n(3n-2) & 1, 8, 21, 40, 65, ...
 \end{aligned}$$
 
 The ordered set of three 4-digit numbers: 8128, 2882, 8281, has three

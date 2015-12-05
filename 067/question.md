@@ -19,4 +19,4 @@ altogether! If you could check one trillion ($10^{12}$) routes every
 second it would take over twenty billion years to check them all. There
 is an efficient algorithm to solve it. ;o)
 
-  [triangle.txt]: http://projecteuler.net/project/triangle.txt
+  [triangle.txt]: https://projecteuler.net/project/resources/p067_triangle.txt

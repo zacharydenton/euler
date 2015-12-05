@@ -15,7 +15,7 @@ coefficients, 79 and 1601, is 126479.
 
 Considering quadratics of the form:
 
-$$n^2 + an + b, \text{ where } |a| < 1000 \text{ and } |b| < 1000$$
+$$n^2 + an + b, \text{ where } |a| \lt 1000 \text{ and } |b| \lt 1000$$
 
 Find the product of the coefficients, a and b, for 
 the quadratic expression that produces the maximum 

@@ -1,9 +1,9 @@
 Consider all integer combinations of $a^b$ for $2 \leq a \leq 5$ and $2 \leq b \leq 5$:
 
 $$\begin{aligned}
-& 2^2 = 4\text{, } 2^3 = 8\text{, } 2^4 = 16\text{, } 2^5 = 32 \\\\
-& 3^2 = 9\text{, } 3^3 = 27\text{, } 3^4 = 81\text{, } 3^5 = 243 \\\\
-& 4^2 = 16\text{, } 4^3 = 64\text{, } 4^4 = 256\text{, } 4^5 = 1024 \\\\
+& 2^2 = 4\text{, } 2^3 = 8\text{, } 2^4 = 16\text{, } 2^5 = 32 \\
+& 3^2 = 9\text{, } 3^3 = 27\text{, } 3^4 = 81\text{, } 3^5 = 243 \\
+& 4^2 = 16\text{, } 4^3 = 64\text{, } 4^4 = 256\text{, } 4^5 = 1024 \\
 & 5^2 = 25\text{, } 5^3 = 125\text{, } 5^4 = 625\text{, } 5^5 = 3125
 \end{aligned}$$
 

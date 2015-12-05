@@ -1,14 +1,14 @@
 The grid can be expressed as [Pascal's Triangle](http://en.wikipedia.org/wiki/Pascal's_triangle):
 
-<p style="text-align: center">
-1<br />
-1 1 <br />
-1 <strong>2</strong> 1 <br />
-1 3 3 1 <br />
-1 4 <strong>6</strong> 4 1 <br />
-1 5 10 10 5 1 <br />
-1 6 15 <strong>20</strong> 15 6 1<br />
-</p>
+```
+1
+1 1
+1 (2) 1
+1 3 3 1
+1 4 (6) 4 1
+1 5 10 10 5 1
+1 6 15 (20) 15 6 1
+```
 
 Note that the solution for a 1x1 grid is 2, a 2x2 grid is 6, and a 3x3 grid is 20.
 
