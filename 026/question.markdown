@@ -14,7 +14,7 @@ $$\begin{aligned}
 \frac{1}{10}&=0.1
 \end{aligned}$$
 
-Where $0.1\overline{6}$ means $0.1666\dots$, and has a 1-digit recurring 
+Where $0.1\overline{6}$ means $0.1666...$, and has a 1-digit recurring 
 cycle. It can be seen that $\frac{1}{7}$ has a 6-digit recurring cycle.
 
 Find the value of $d < 1000$ for which $\frac{1}{d}$ contains the longest 

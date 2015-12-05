@@ -2,8 +2,8 @@ The following iterative sequence is defined for the set of positive integers:
 
 $$n \rightarrow
 \begin{cases} 
-\tfrac{n}{2} & \text{if } n \text{ is even} \\\\
-3n+1 & \text{if } n \text{ is odd} \\\\
+\tfrac{n}{2} & \text{if } n \text{ is even} \\
+3n+1 & \text{if } n \text{ is odd}
 \end{cases}$$
 
 Using the rule above and starting with 13, we generate the following sequence:

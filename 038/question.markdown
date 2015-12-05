@@ -14,5 +14,5 @@ The same can be achieved by starting with 9 and multiplying by 1, 2, 3,
 product of 9 and (1,2,3,4,5).
 
 What is the largest 1 to 9 pandigital 9-digit number that can be formed
-as the concatenated product of an integer with $1,2,\dots,n$ where
+as the concatenated product of an integer with $1,2,...,n$ where
 $n > 1$?
