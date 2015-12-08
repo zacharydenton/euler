@@ -1,4 +1,4 @@
-#!/usr/bioon/env ruby
+#!/usr/bin/env ruby
 count = 0
 200.step(0, -200) do |a|
   a.step(0, -100) do |b|
