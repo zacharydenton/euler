@@ -15,7 +15,7 @@ vertical :: [[Int]] -> [[Int]]
 vertical = horizontal . transpose
 
 diagonal :: [[Int]] -> [[Int]]
-diagonal = concatMap (chunks 4) . transpose . zipWith drop [0..]
+diagonal = vertical . zipWith drop [0..]
 
 southEast :: [[Int]] -> [[Int]]
 southEast = concatMap diagonal . tails
