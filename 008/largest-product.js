@@ -1,4 +1,4 @@
-const number = `
+const runs = `
 73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
@@ -19,11 +19,17 @@ const number = `
 84580156166097919133875499200524063689912560717606
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
-`.trim().split("\n").join("")
+`.trim().split("\n").join("").split(/[01]+/)
 const x = 13
 let max = 0
-for (let i = 0, l = number.length; i < l - x; i++) {
-  const product = number.substring(i, i + x).split("").reduce((prod, c) => prod * parseInt(c), 1)
-  if (product > max) max = product
-}
+runs.forEach((run) => {
+  if (run.length < x) {
+    return
+  }
+  for (let i = 0, l = run.length; i <= l - x; i++) {
+    const digits = run.substring(i, i + x).split("")
+    const product = digits.reduce((prod, c) => prod * parseInt(c), 1)
+    if (product > max) max = product
+  }
+})
 console.log(max)
