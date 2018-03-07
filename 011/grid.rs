@@ -7,7 +7,7 @@ fn main() {
     let intervals: [isize; 4] = [1, 20, 21, -19];
     let max_product: u64 = grid.iter()
         .enumerate()
-        .flat_map(|(i, _)| {
+        .map(|(i, _)| {
             intervals
                 .iter()
                 .filter_map(|interval| {
@@ -21,7 +21,8 @@ fn main() {
                         None
                     }
                 })
-                .collect::<Vec<_>>()
+                .max()
+                .unwrap()
         })
         .max()
         .unwrap();
