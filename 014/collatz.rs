@@ -6,7 +6,7 @@ fn main() {
             let mut j: usize = i;
             let mut len = 0;
             loop {
-                if j < 1000000 && collatz[j] != 0 {
+                if j < collatz.len() && collatz[j] != 0 {
                     break;
                 }
                 len += 1;
