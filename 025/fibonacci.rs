@@ -14,7 +14,7 @@ fn main() {
             carry = digit / 10;
             a[i] = digit % 10;
         }
-        if (carry > 0) {
+        if carry > 0 {
             a.push(carry);
         }
         b = a;
