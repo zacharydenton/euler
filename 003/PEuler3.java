@@ -1,4 +1,4 @@
-public class PEuler2{
+public class PEuler3{
 
      public static void main(String []args){
      	
