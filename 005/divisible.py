@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 def is_divisible_to(number, x):
-    for i in reversed(list(range(1, x+1))):
+    for i in range(x+1, x, -1):
         if number % i != 0:
             return False
     return True
