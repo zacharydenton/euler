@@ -5,8 +5,10 @@ def get_digits(n):
 
 def same_digits(n, iterations=2):
     digits = get_digits(n)
+    prod = n
     for i in range(1, iterations):
-        if not digits == get_digits(n+(i*n)):
+        prod += n
+        if not digits == get_digits(prod):
             return False
     return True
 
